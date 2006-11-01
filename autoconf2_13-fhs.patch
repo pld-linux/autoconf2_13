@@ -1,0 +1,19 @@
+diff -Nru autoconf-2.13/acgeneral.m4 autoconf-2.13.new/acgeneral.m4
+--- autoconf-2.13/acgeneral.m4	Wed Aug 16 19:24:11 2000
++++ autoconf-2.13.new/acgeneral.m4	Wed Aug 16 19:25:11 2000
+@@ -198,12 +198,12 @@
+ datadir='${prefix}/share'
+ sysconfdir='${prefix}/etc'
+ sharedstatedir='${prefix}/com'
+-localstatedir='${prefix}/var'
++localstatedir='/var/lib'
+ libdir='${exec_prefix}/lib'
+ includedir='${prefix}/include'
+ oldincludedir='/usr/include'
+-infodir='${prefix}/info'
+-mandir='${prefix}/man'
++infodir='${prefix}/share/info'
++mandir='${prefix}/share/man'
+ 
+ # Initialize some other variables.
+ subdirs=
