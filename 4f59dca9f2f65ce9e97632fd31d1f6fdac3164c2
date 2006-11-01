@@ -1,0 +1,5 @@
+- brought back to life for shitty project, that don't want to port their big software to new autoconf (like mozilla, php)
+- adapted to new times
+- descriptions from HEAD autoconf.spec
+- brought from an unlucky autoconf-2_13-13 tag
+- I'll burn in hell for bringing back kloczeks work out of oblivion!
