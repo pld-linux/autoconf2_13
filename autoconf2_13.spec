@@ -24,6 +24,7 @@ Patch4:		%{name}-notmp.patch
 Patch5:		%{name}-pinard.patch
 Patch6:		%{name}-fhs.patch
 Patch7:		%{name}-DESTDIR.patch
+Patch8:		%{name}-datadir.patch
 URL:		http://www.gnu.org/software/autoconf/
 BuildRequires:	m4
 BuildConflicts:	m4 = 1.4o
@@ -162,9 +163,11 @@ GNU autoconf - це ╕нструмент для автоматично╖ конф╕гурац╕╖ вих╕дних
 %patch5 -p1
 %patch6 -p1
 %patch7 -p1
+%patch8 -p0
 
 %build
-%configure2_13
+%configure2_13 \
+	--program-suffix=2_13
 %{__make}
 
 %install
@@ -174,17 +177,13 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf
+install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf2_13
 
 install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
 	$RPM_BUILD_ROOT%{_mandir}/man1
 
 # renaming for both autoconfs in one system
 cd $RPM_BUILD_ROOT
-mv .%{_libdir}/autoconf .%{_libdir}/autoconf2_13
-for i in `find usr/bin -type f`; do
-	mv "$i" `echo "$i" | sed 's/$/2_13/'`
-done
 for i in `find usr/{share/info,share/man/man1} -type f`; do
 	mv "$i" `echo "$i" | sed 's/\./2_13\./'`
 done
