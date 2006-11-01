@@ -1,0 +1,2 @@
+- use autotools to rename files
+- now autoconf2_13 uses /usr/share/autoconf2_13 instead of /usr/share/autoconf (sic!)
