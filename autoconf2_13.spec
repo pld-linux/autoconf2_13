@@ -11,7 +11,7 @@ Summary(ru):	GNU autoconf - автоконфигуратор исходных текстов
 Summary(uk):	GNU autoconf - автоконф╕гуратор вих╕дних текст╕в
 Name:		autoconf2_13
 Version:	2.13
-Release:	0.9
+Release:	0.10
 License:	GPL
 Group:		Development/Building
 Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
@@ -179,15 +179,14 @@ install -d $RPM_BUILD_ROOT%{_mandir}/man1
 
 install install-sh $RPM_BUILD_ROOT%{_libdir}/autoconf2_13
 
-install {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1 \
-	$RPM_BUILD_ROOT%{_mandir}/man1
-
-# renaming for both autoconfs in one system
-cd $RPM_BUILD_ROOT
-for i in `find usr/{share/info,share/man/man1} -type f`; do
-	mv "$i" `echo "$i" | sed 's/\./2_13\./'`
+for a in {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1; do
+	cp -a $a $RPM_BUILD_ROOT%{_mandir}/man1/${a%.1}2_13.1
 done
 
+# renaming for both autoconfs in one system
+for a in $RPM_BUILD_ROOT%{_infodir}/*.info; do
+	mv $a ${a%.info}2_13.info
+done
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
