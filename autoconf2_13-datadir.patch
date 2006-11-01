@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2006-11-01 12:00:51.000000000 +0100
++++ Makefile.in	2006-11-01 11:58:27.000000000 +0100
+@@ -49,7 +49,7 @@
+ 
+ # Directory in which to install library files.
+ datadir = @datadir@
+-acdatadir = $(datadir)/autoconf
++acdatadir = $(datadir)/autoconf2_13
+ 
+ # Directory in which to install documentation info files.
+ infodir = @infodir@
