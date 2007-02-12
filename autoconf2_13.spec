@@ -1,14 +1,14 @@
 %define		_realname	autoconf
 Summary:	GNU autoconf - source configuration tools
-Summary(de.UTF-8):   Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
-Summary(es.UTF-8):   Una herramienta GNU para configurar automáticamente el código fuente
-Summary(fr.UTF-8):   Un outil de GNU pour configurer automatiquement le code source
-Summary(it.UTF-8):   Uno strumento di GNU per automaticamente la configurazione del codice sorgente
-Summary(ko.UTF-8):   스스로 환경에 따라 소스 코드를 맞춰주는 GNU 도구
-Summary(pl.UTF-8):   GNU autoconf - narzędzie do automatycznego konfigurowania źródeł
-Summary(pt_BR.UTF-8):   GNU autoconf - ferramentas de configuração de fontes
-Summary(ru.UTF-8):   GNU autoconf - автоконфигуратор исходных текстов
-Summary(uk.UTF-8):   GNU autoconf - автоконфігуратор вихідних текстів
+Summary(de.UTF-8):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
+Summary(es.UTF-8):	Una herramienta GNU para configurar automáticamente el código fuente
+Summary(fr.UTF-8):	Un outil de GNU pour configurer automatiquement le code source
+Summary(it.UTF-8):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
+Summary(ko.UTF-8):	스스로 환경에 따라 소스 코드를 맞춰주는 GNU 도구
+Summary(pl.UTF-8):	GNU autoconf - narzędzie do automatycznego konfigurowania źródeł
+Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
+Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
+Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf2_13
 Version:	2.13
 Release:	0.10
