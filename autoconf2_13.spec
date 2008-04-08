@@ -14,7 +14,7 @@ Version:	2.13
 Release:	0.10
 License:	GPL
 Group:		Development/Building
-Source0:	ftp://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
+Source0:	http://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
 # Source0-md5:	9de56d4a161a723228220b0f425dc711
 Patch0:		%{name}-tmprace.patch
 Patch1:		%{name}-info.patch
