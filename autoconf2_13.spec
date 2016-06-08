@@ -11,7 +11,7 @@ Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходн�
 Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
 Name:		autoconf2_13
 Version:	2.13
-Release:	0.10
+Release:	1
 License:	GPL
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
