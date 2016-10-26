@@ -1,18 +1,18 @@
 %define		_realname	autoconf
-Summary:	GNU autoconf - source configuration tools
+Summary:	GNU autoconf 2.13 - old source configuration tools
 Summary(de.UTF-8):	Ein GNU-Hilfsmittel für Quellencode automatisch konfigurieren
 Summary(es.UTF-8):	Una herramienta GNU para configurar automáticamente el código fuente
 Summary(fr.UTF-8):	Un outil de GNU pour configurer automatiquement le code source
 Summary(it.UTF-8):	Uno strumento di GNU per automaticamente la configurazione del codice sorgente
 Summary(ko.UTF-8):	스스로 환경에 따라 소스 코드를 맞춰주는 GNU 도구
-Summary(pl.UTF-8):	GNU autoconf - narzędzie do automatycznego konfigurowania źródeł
-Summary(pt_BR.UTF-8):	GNU autoconf - ferramentas de configuração de fontes
-Summary(ru.UTF-8):	GNU autoconf - автоконфигуратор исходных текстов
-Summary(uk.UTF-8):	GNU autoconf - автоконфігуратор вихідних текстів
+Summary(pl.UTF-8):	GNU autoconf 2.13 - stare narzędzie do automatycznego konfigurowania źródeł
+Summary(pt_BR.UTF-8):	GNU autoconf 2.13 - ferramentas de configuração de fontes
+Summary(ru.UTF-8):	GNU autoconf 2.13 - автоконфигуратор исходных текстов
+Summary(uk.UTF-8):	GNU autoconf 2.13 - автоконфігуратор вихідних текстів
 Name:		autoconf2_13
 Version:	2.13
 Release:	1
-License:	GPL
+License:	GPL v2+
 Group:		Development/Building
 Source0:	http://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
 # Source0-md5:	9de56d4a161a723228220b0f425dc711
@@ -51,6 +51,10 @@ Note that the Autoconf package is not required for the end user who
 may be configuring software with an Autoconf-generated script;
 Autoconf is only required for the generation of the scripts, not their
 use.
+
+This package contains very old 2.13 version, provided for
+compatibility with ancient software (or software using ancient build
+system).
 
 %description -l de.UTF-8
 GNU's Autoconf ist eines Hilfsmittels für das Konfigurieren des
@@ -128,6 +132,10 @@ wybór wielu opcji podczas procesu przygotowania do kompilacji.
 GNU autoconf nie jest generalnie potrzebny końcowemu użytkownikowi, a
 tylko podczas generowania samych skryptów autokonfiguracyjnych.
 
+Ten pakiet zawiera bardzo starą wesję autoconfa 2.13, przeznaczoną dla
+zgodności z archaicznym oprogramowaniem (lub oprogramowaniem
+używającym archaicznego systemu budowania).
+
 %description -l pt_BR.UTF-8
 GNU "autoconf" é uma ferramenta para configuração de fontes e
 Makefiles. Ele ajuda o programador na criação de pacotes portáveis e
@@ -185,13 +193,13 @@ done
 
 # renaming for both autoconfs in one system
 for a in $RPM_BUILD_ROOT%{_infodir}/*.info; do
-	mv $a ${a%.info}2_13.info
+	%{__mv} $a ${a%.info}2_13.info
 done
 
-%post	-p	/sbin/postshell
+%post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun	-p	/sbin/postshell
+%postun	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
 %clean
@@ -199,8 +207,18 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/autoconf2_13
+%attr(755,root,root) %{_bindir}/autoheader2_13
+%attr(755,root,root) %{_bindir}/autoreconf2_13
+%attr(755,root,root) %{_bindir}/autoscan2_13
+%attr(755,root,root) %{_bindir}/autoupdate2_13
+%attr(755,root,root) %{_bindir}/ifnames2_13
 %{_infodir}/autoconf2_13.info*
 %{_infodir}/standards2_13.info*
 %{_libdir}/autoconf2_13
-%{_mandir}/man1/*
+%{_mandir}/man1/autoconf2_13.1*
+%{_mandir}/man1/autoheader2_13.1*
+%{_mandir}/man1/autoreconf2_13.1*
+%{_mandir}/man1/autoscan2_13.1*
+%{_mandir}/man1/autoupdate2_13.1*
+%{_mandir}/man1/ifnames2_13.1*
