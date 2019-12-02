@@ -11,10 +11,10 @@ Summary(ru.UTF-8):	GNU autoconf 2.13 - автоконфигуратор исхо
 Summary(uk.UTF-8):	GNU autoconf 2.13 - автоконфігуратор вихідних текстів
 Name:		autoconf2_13
 Version:	2.13
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Development/Building
-Source0:	http://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
+Source0:	https://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
 # Source0-md5:	9de56d4a161a723228220b0f425dc711
 Patch0:		%{name}-tmprace.patch
 Patch1:		%{name}-info.patch
@@ -192,9 +192,9 @@ for a in {autoconf,autoheader,autoreconf,autoscan,autoupdate,ifnames}.1; do
 done
 
 # renaming for both autoconfs in one system
-for a in $RPM_BUILD_ROOT%{_infodir}/*.info; do
-	%{__mv} $a ${a%.info}2_13.info
-done
+%{__mv} $RPM_BUILD_ROOT%{_infodir}/autoconf.info $RPM_BUILD_ROOT%{_infodir}/autoconf2_13.info
+# keep just most recent version of "GNU Coding Standards"
+%{__rm} $RPM_BUILD_ROOT%{_infodir}/standards.info
 
 %post	-p /sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
@@ -214,7 +214,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/autoupdate2_13
 %attr(755,root,root) %{_bindir}/ifnames2_13
 %{_infodir}/autoconf2_13.info*
-%{_infodir}/standards2_13.info*
 %{_libdir}/autoconf2_13
 %{_mandir}/man1/autoconf2_13.1*
 %{_mandir}/man1/autoheader2_13.1*

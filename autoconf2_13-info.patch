@@ -8,7 +8,7 @@ diff -Nru autoconf-2.12/autoconf.texi autoconf-2.12.new/autoconf.texi
 +INFO-DIR-SECTION Programming tools:
  START-INFO-DIR-ENTRY
 -* Autoconf: (autoconf).         Create source code configuration scripts.
-+* autoconf: (autoconf).			Create source code configuration scripts
++* Autoconf 2.13: (autoconf2_13).	Create source code configuration scripts
  END-INFO-DIR-ENTRY
  @end format
  
