@@ -11,7 +11,7 @@ Summary(ru.UTF-8):	GNU autoconf 2.13 - автоконфигуратор исхо
 Summary(uk.UTF-8):	GNU autoconf 2.13 - автоконфігуратор вихідних текстів
 Name:		autoconf2_13
 Version:	2.13
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Development/Building
 Source0:	https://ftp.gnu.org/gnu/autoconf/%{_realname}-%{version}.tar.gz
